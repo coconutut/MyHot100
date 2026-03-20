@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 
-//Manacher Algorithm
+//Manacher Algorithm  P[i]的初始化为i关于C的镜像位置j的P[j]
 int main(){
     string s;
     cin >> s;
@@ -17,7 +17,7 @@ int main(){
     int C = 0;  //最右中心
     int R = 0; //最右边界
     vector<int> P(n, 0);
-    for(int i = 1; i < n-1; i++){
+    for(int i = 1; i < n-2; i++){
         if(i < R){
             P[i] = min(R - i, P[2*C - i]);
         }
